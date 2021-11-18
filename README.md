@@ -1,5 +1,7 @@
 # S.C.A.R.F. Expansion Audio Interfacer
 
+![](exp-interface.png)
+
 An Open-Source HardWare (OSHW) Famicom expansion audio interfacer.
 
 Currently a work in progress, but the first prototype is functionally complete (I hope!)

@@ -1,0 +1,71 @@
+Name            SCARFADR;
+PartNo          00;
+Date            11/4/2021;
+Revision        0.0.1;
+Designer        Persune;
+Company         None;
+Assembly        None;
+Location        None;
+Device          g22v10;
+
+/*
+    S.C.A.R.F. Expansion Audio Interfacer Address decoding
+    Firmware v.0.0.1
+    Copyright (C) 2021 Persune
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this program; if not, write to the Free Software Foundation, Inc.,
+    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+*/
+
+/* Inputs */
+
+pin 1  = CPU_RW;	/* Low indicates write, high indicates read */
+pin 2  = CPU_A3;
+pin 3  = CPU_A4;
+pin 4  = CPU_A8;
+pin 5  = CPU_A9;
+pin 6  = CPU_A10;
+pin 7  = CPU_A11;
+pin 8  = CPU_A12;
+pin 9  = CPU_A13;
+pin 10 = CPU_A14;
+pin 11 = !RomSel;	/* Active low */
+
+/* Outputs */
+
+pin 14 = SSG_Enable;
+pin 15 = S5B_Enable;
+pin 16 = N163_Enable;
+pin 17 = VRC7_Enable;
+pin 18 = VRC6_Enable;
+pin 19 = MMC5_Enable;
+pin 20 = FDS_Enable;
+
+/* Logic */
+
+/* x = don't care */
+/* S5B/SSG: 11x0 xxxx xxxx xxxx */
+/* N163:    x1xx 1xxx xxxx xxxx */
+/* VRC7:    1001 0000 00x1 x000 */
+/* VRC6:    10xx 0000 0000 00xx */
+/* MMC5:    0101 0000 000x xxxx */
+/* FDS:     0100 0000 xxxx xxxx */
+
+!S5B_Enable  = !CPU_RW & !RomSel &  CPU_A14 & !CPU_A12;
+SSG_Enable   = !CPU_RW & !RomSel &  CPU_A14 & !CPU_A12;
+N163_Enable  = !RomSel & CPU_A14 &  CPU_A11;
+!VRC7_Enable = !CPU_RW & !RomSel &  CPU_A12 &  CPU_A4;
+!VRC6_Enable = !CPU_RW & !RomSel &  (CPU_A4 #  CPU_A3);
+MMC5_Enable  =  RomSel & !CPU_RW &  CPU_A14 &  CPU_A12 & !CPU_A13;
+!FDS_Enable  =  RomSel & CPU_A12 & !CPU_A14 & !CPU_A13 & !CPU_A11 & !CPU_A10 & !CPU_A9 & !CPU_A8;
