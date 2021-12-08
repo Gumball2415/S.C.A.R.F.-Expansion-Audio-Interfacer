@@ -13,7 +13,7 @@ Please use the gerber exports in each release.
 ### Motherboard
 
 - 2 layers
-- mm x mm
+- 222.64mm x 122.24mm
 - 1.6mm thickness
 - ENIG-RoHS surface finish recommended
 - Any soldermask color you want!
@@ -21,7 +21,7 @@ Please use the gerber exports in each release.
 ### Cartridge Adapters
 
 - 2 layers
-- mm x mm
+- Multiple footprints in gerber, might need to manually panelize
 - 1.2mm thickness
 - ENIG-RoHS surface finish recommended; Gold fingers optional
 - Beveled edge, chamfer cut
