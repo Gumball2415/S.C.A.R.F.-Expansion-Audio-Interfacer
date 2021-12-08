@@ -5,6 +5,28 @@
 An Open-Source HardWare (OSHW) Famicom expansion audio interfacer.
 
 Currently a work in progress, but the first prototype is functionally complete (I hope!)
+## PCB Specifications
+
+Note that this project is optimized for JLCPCB manufacturing, so you may have to modify the gerber export, remove the "JLCJLCJLCJLC" silkscreen text, etc.
+Please use the gerber exports in each release.
+
+### Motherboard
+
+- 2 layers
+- mm x mm
+- 1.6mm thickness
+- ENIG-RoHS surface finish recommended
+- Any soldermask color you want!
+
+### Cartridge Adapters
+
+- 2 layers
+- mm x mm
+- 1.2mm thickness
+- ENIG-RoHS surface finish recommended; Gold fingers optional
+- Beveled edge, chamfer cut
+- Any soldermask color you want!
+
 
 ## License
 
