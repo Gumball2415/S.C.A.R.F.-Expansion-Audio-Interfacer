@@ -4,7 +4,9 @@
 
 An Open-Source HardWare (OSHW) Famicom expansion audio interfacer.
 
-Currently a work in progress, but the first prototype is functionally complete (I hope!)
+Currently a work in progress, completed but untested!!!
+28/FEB/2023: this repo is now archived, i may have to start from scratch with what i learned since i started this.
+
 ## PCB Specifications
 
 Note that this project is optimized for JLCPCB manufacturing, so you may have to modify the gerber export, remove the "JLCJLCJLCJLC" silkscreen text, etc.
